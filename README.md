@@ -1,3 +1,4 @@
+
   ______  __    __   __  .___  ___. .___  ___. .______   
  /      ||  |  |  | |  | |   \/   | |   \/   | |   _  \  
 |  ,----'|  |__|  | |  | |  \  /  | |  \  /  | |  |_)  | 
@@ -15,6 +16,8 @@ brought to you by:
 Dr. David Ochsenbein, Automatic Control Laboratory, ochsenbein@control.ee.ethz.ch (active)
 Till Koellges, The Laboratory of Intensified Particulate Processes, till.kollges@manchester.ac.uk (active)
 
+CHIMMP requires the multiparametric toolbox 3 to run, an open source Matlab-based toolbox developed by IfA.
+Please see http://people.ee.ethz.ch/~mpt/3/ for further information.
 
 ** Bug reports
 Please submit bugs via the Github page:
