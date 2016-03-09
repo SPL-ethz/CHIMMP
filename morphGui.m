@@ -36,27 +36,27 @@ catch
     updateMap
 end
 
-Crystals = load('CrystalData');
-Crystals = Crystals.Crystals;
-Mc = struct2cell(Crystals);
-Mc = Mc(6,:);
-I = false(length(Mc),1);
-for i = 1:length(Mc)
-    if length(Mc{i}(1,:))~=3
-        I(i) = false;
-    else
-        I(i) = true;
-    end
-end
-Crystals = Crystals(I,:);
+% Crystals = load('CrystalData');
+% Crystals = Crystals.Crystals;
+% Mc = struct2cell(Crystals);
+% Mc = Mc(6,:);
+% I = false(length(Mc),1);
+% for i = 1:length(Mc)
+%     if length(Mc{i}(1,:))~=3
+%         I(i) = false;
+%     else
+%         I(i) = true;
+%     end
+% end
+% Crystals = Crystals(I,:);
+% 
+% for i = 1:length(Crystals)
+ crysnames= {'blub'};
+% end
 
-for i = 1:length(Crystals)
-    crysnames{i} = Crystals(i).heteronyms{1};
-end
-
-
-[~,Ival] = getCrystalInfo(crystal.heteronyms{1});
-Ival = find(Ival);
+% 
+% [~,Ival] = getCrystalInfo(crystal.heteronyms{1});
+% Ival = find(Ival);
 
 hpu = uicontrol(hf,'style','popupmenu','units','normalized','position',[0.65    0.6    0.2500    0.2000],'string',crysnames,'value',Ival,...
     'fontsize',14,'callback',@popupcallback,'backgroundcolor','w');
@@ -113,7 +113,7 @@ hpu = uicontrol(hf,'style','popupmenu','units','normalized','position',[0.65    
         if nargin<1
             
             
-            crystal = getCrystalInfo('blglu');
+%             crystal = getCrystalInfo('blglu');
 %             crystal.M = [1,0,0,0,0,0;1,0,0,0,0,0;1,0,0,0,0,0;1,0,0,0,0,0;0,1,0,0,0,0;0,1,0,0,0,0;0,0,0,1,0,0;0,0,0,1,0,0;0,0,1,0,0,0;0,0,1,0,0,0;0,0,0,0,0,1;0,0,0,0,0,1;0,0,0,0,0,1;0,0,0,0,0,1;0,0,0,0,1,0;0,0,0,0,1,0];
             
             crystal.H = [-9.30702956532859e-17,-1.04077766150235e-16,1.00000000000000;9.30702956532859e-17,1.04077766150235e-16,-1.00000000000000;-0.760447467379201,0.614567348899053,-0.209825220180388;0.760447467379201,-0.614567348899053,0.209825220180388;-0.829652744433316,-0.486102158099949,0.274556033524742;0.829652744433316,0.486102158099949,-0.274556033524742;-0.604912610090194,0.488869455216894,0.628559774333202;0.604912610090194,-0.488869455216894,-0.628559774333202;0.148067858804268,0.916206732216432,0.372345448515765;-0.148067858804268,-0.916206732216432,-0.372345448515765];
