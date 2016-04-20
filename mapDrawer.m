@@ -80,7 +80,7 @@ sizeArr = zeros(1,n-1);
 rvec = cell(1,n-1);
 
 for i = 1:n-1
-        rvec{i} = logspace(log10(exp(-4)),log10(exp(4)),(n<3)*500+(n>=3)*101);
+        rvec{i} = logspace(-2,2,(n<3)*500+(n>=3)*101);
         sizeArr(i) = (n<3)*500+(n>=3)*101;
 end
 % number of grid points used to draw the map
@@ -202,7 +202,7 @@ clrs = [111 183 214;
     154 206 223;
     191 213 232]/255;
 
-Map = zeros(size(subMorphMap)); % memory pre-allocation
+Map     = zeros(size(subMorphMap)); % memory pre-allocation
 newSize = ones(1,n);newSize(n) = 3;
 for i = 1:nMorphs
     I = find(morphClass == i); % find submorphologies belonging to this class
@@ -212,6 +212,5 @@ for i = 1:nMorphs
        Cmatloc                  = repmat(helpC,newSize).*repmat(reshape(clrs(i,:),newSize),[size(subMorphMap) 1]); % create local color matrix
        Cmat                     = Cmat+Cmatloc; % add to overall color matrix
        Map(ismember(subMorphMap,I))   = i; 
-   
 end
 

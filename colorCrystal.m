@@ -1,12 +1,30 @@
-function [pFace,MilCol,Pmin] = colorCrystal(Pbase,P,M,Mil)
+function [pFace,MilCol,Pmin,clrs] = colorCrystal(Pbase,P,M,Mil,clrs)
+
+% Copyright 2016 David Ochsenbein
+% 
+% This file is part of CHIMMP.
+% 
+% CHIMMP is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation version 3 of the License.
+% 
+% CHIMMP is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+% 
+% You should have received a copy of the GNU General Public License
+% along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Pmin = Polyhedron(P.A,P.b);
 Pmin.minHRep;
 
 nGroups = size(M,2);
 
-clrs = distinguishable_colors(nGroups,{'k' 'w'});
-MilCol = zeros(nGroups,6);
+if nargin < 5
+    clrs    = distinguishable_colors(nGroups,{'k' 'w'});
+end
+MilCol  = zeros(nGroups,6);
 
 if nargout>1
     for j = 1:size(Pbase.A,1)

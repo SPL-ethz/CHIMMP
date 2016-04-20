@@ -61,19 +61,18 @@ for i = 1:max(morphMap(:))
     % find all indices belonging to subdomain
     I = find(morphMap==i);
     [X{:}] = ind2sub(size(R{1}),I);
+
   
-    % use area center if possible... looks nicer if you need a
+    % use center if possible... looks nicer if you need a
     % 'representative' shape for a given domain
     outsidePoint = false;
-    for j = 1:n-1
-        Xavg{j} = round(mean(X{j}));
-        if ~ismember(Xavg{j},X{j});
-            outsidePoint = true;
-        end
+    Xavg = round(cellfun(@mean,X));
+    if ~ismember(Xavg,[X{1,1:n-1}],'rows');
+        outsidePoint = true;
     end
+    Xavg = num2cell(Xavg);
 
-    % if the area center lies outside the domain, just pick the middle
-    % index
+    % if the center lies outside the domain, just pick the middle index
     if ~outsidePoint
         Irep = sub2ind(size(R{1}),Xavg{:});
     else
@@ -94,9 +93,6 @@ for i = 1:max(morphMap(:))
     Amin = Prep(i).minHRep.H; 
     Amin(:,end) = []; % last column not part of A in our terminology
 
-    [facetPresent(:,i)] = ismember(A,Amin,'rows');
-    
-        
+    [facetPresent(:,i)] = ismember(A,Amin,'rows');     
     
 end
-
