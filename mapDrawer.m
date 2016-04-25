@@ -1,21 +1,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % ETH Zurich, Switzerland
-% UC Santa Barbara, USA
-%
-% Project:  Novartis (UCSB+ETHZ)
-% Year:     2016
-% MATLAB:   R2014b, Windows 10
-% Authors:  Dave Ochsenbein (DRO)
 %
 % Purpose:
 % This function calculates the morphology map based on the boundary
 % conditions found using morphologyDomainExplorer. It returns the map and
 % suggests a colormap via output Cmat.
-%
-% Last modified:
-% - 12. Jan 2016, DO: Initial creation
-%
 %
 % Input arguments:
 % - A:                      (m x 3)-matrix containing all unit normal vectors of the m possible facets, needed for Polyhedron description P = {x \in R3 | Ax <= ML})
@@ -46,7 +36,30 @@
 
 function [rvec,Map,Cmat,outFlag] = mapDrawer(A,M)
 
+if exist('tbxmanager','file')
+    
+    tbxmanager restorepath
+    
+end
+    
+if ~exist('mpt_init','file')
 
+    s = input('Could not find geometry toolboxes. Would you like to download them [y/n]? ','s');
+
+    if strcmpi(s,'y')
+        urlwrite('http://www.tbxmanager.com/tbxmanager.m', 'tbxmanager.m');
+        rehash
+
+        tbxmanager install fourier cddmex lcp mpt
+
+    else
+        error('mapDrawer:mptNotFound',...
+            'Could not locate the geometry toolboxes in search path.');
+    end
+
+end
+    
+keyboard
 %% Preparation / Parameters
 % Default output flag is 1
 outFlag = 1;
