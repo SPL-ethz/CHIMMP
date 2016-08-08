@@ -35,31 +35,6 @@
 % along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 function [rvec,Map,Cmat,outFlag] = mapDrawer(A,M)
-
-if exist('tbxmanager','file')
-    
-    tbxmanager restorepath
-    
-end
-    
-if ~exist('mpt_init','file')
-
-    s = input('Could not find geometry toolboxes. Would you like to download them [y/n]? ','s');
-
-    if strcmpi(s,'y')
-        urlwrite('http://www.tbxmanager.com/tbxmanager.m', 'tbxmanager.m');
-        rehash
-
-        tbxmanager install fourier cddmex lcp mpt
-
-    else
-        error('mapDrawer:mptNotFound',...
-            'Could not locate the geometry toolboxes in search path.');
-    end
-
-end
-    
-keyboard
 %% Preparation / Parameters
 % Default output flag is 1
 outFlag = 1;

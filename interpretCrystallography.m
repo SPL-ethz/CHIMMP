@@ -9,7 +9,7 @@
 % Authors:  Dave Ochsenbein (DRO)
 %
 % Purpose:
-% This function translates the info received from ADDICT into two matrices
+% This function trADDICT anslates the info received from ADDICT into two matrices
 % A and M which are needed for the morphology map calculation. A is
 % the set of unit normal vectors of all m possible facets in
 % carthesian coordinates; M is the matrix grouping facets of identical
@@ -18,7 +18,7 @@
 % Last modified:
 %
 % Input arguments:
-% - unitCell:               Structure containing unit cell info
+% - D:               Structure containing unit cell info
 %   * a                     unit cell length a
 %   * b                     unit cell length b
 %   * c                     unit cell length c
