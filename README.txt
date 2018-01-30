@@ -13,17 +13,17 @@ a project of SPLIfA and University of Manchester
 CHIMMP is a tool to visualize and explore crystal shapes as well as the associated morphology maps.
 
 brought to you by:
-Dr. David Ochsenbein, Automatic Control Laboratory, ochsenbein@control.ee.ethz.ch (active)
-Till Koellges, The Laboratory of Intensified Particulate Processes, till.kollges@manchester.ac.uk (active)
+Dr. David Ochsenbein (dave.ochsenbein@gmail.com; semi-active)
+Till Koellges (inactive)
 
 CHIMMP requires the multiparametric toolbox 3 to run, an open source Matlab-based toolbox developed by IfA.
 Please see http://people.ee.ethz.ch/~mpt/3/ for further information.
 
 ** Bug reports
 Please submit bugs via the Github page:
--> https://github.com/SPLIfA/CHIMMP (preferably with a screenshot of the (GUI) settings)
+-> https://github.com/bizzinho/CHIMMP (preferably with a screenshot of the (GUI) settings)
 or submit them to 
--> daveo@ethz.ch
+-> dave.ochsenbein@gmail.com
 including again a screenshot or a (zipped) mat file of the object that generated the problem.
 
 
