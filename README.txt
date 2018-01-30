@@ -27,7 +27,8 @@ or submit them to
 including again a screenshot or a (zipped) mat file of the object that generated the problem.
 
 
-Copyright 2016 David Ochsenbein, Till Koellges
+Copyright 2016        David Ochsenbein, Till Koellges
+          2017-2018   David Ochsenbein
 
 CHIMMP is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
